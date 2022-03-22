@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 
 salt = bcrypt.gensalt()
 
+# functions for using bcrypt to encrypt passwords
 def validate_password(self, key, password):
     if len(password) > 7:
         return bcrypt.hashpw(password.encode('utf-8'), salt)
